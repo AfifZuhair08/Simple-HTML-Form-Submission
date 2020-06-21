@@ -73,14 +73,15 @@
       <label for="lname">Last</label><br><br>
 
       <label for="gender"><b>Gender</b>:</label><br>
-      <input type="radio" id="male" name="gender" value="Male">
+      <input type="radio" id="male" name="gender" value="Male" required>
       <label for="Male">Male</label><br>
-      <input type="radio" id="female" name="gender" value="Female">
+      <input type="radio" id="female" name="gender" value="Female" required>
       <label for="Female">Female</label><br><br>
       
 
       <label for="cars"><b>When was the last time you exercise?</b>:</label><br>
       <select name="lastexercise" id="lastexercise" required>
+        <option value=""></option>
         <option value="Currently">Currently</option>
         <option value="Less than 1 year">Less than 1 year</option>
         <option value="1-2 years">1-2 years</option>
@@ -88,11 +89,11 @@
       </select><br><br>
 
       <label for="timeslot"><b>Time Slot</b></label><br>
-      <input type="radio" id="timeslot" name="timeslot" value="Morning : 7.30 - 9.30 am">
+      <input type="radio" id="timeslot" name="timeslot" value="Morning : 7.30 - 9.30 am" required>
       <label for="timeslot">Morning : 7.30 - 9.30 am</label><br>
-      <input type="radio" id="timeslot" name="timeslot" value="Evening : 4.30 - 6.30 pm">
+      <input type="radio" id="timeslot" name="timeslot" value="Evening : 4.30 - 6.30 pm" required>
       <label for="timeslot">Evening : 4.30 - 6.30 pm</label><br>
-      <input type="radio" id="timeslot" name="timeslot" value="Night : 8.30 - 10.30 pm">
+      <input type="radio" id="timeslot" name="timeslot" value="Night : 8.30 - 10.30 pm" required>
       <label for="timeslot">Night : 8.30 - 10.30 pm</label>
 
       <br><br>
