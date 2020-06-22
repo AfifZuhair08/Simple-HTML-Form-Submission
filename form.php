@@ -23,14 +23,14 @@
     $timeslot = trim($_POST['timeslot']);
     $timeslot = mysqli_real_escape_string($conn, $timeslot);
     
-    // $query = "INSERT INTO gym VALUES ('','".$f_name."','".$l_name."','".$gender."','".$lastexercise."','". $timeslot ."')";
     $query = "INSERT INTO gym VALUES ('"."','".$f_name."','".$l_name."','".$gender."','".$lastexercise."','".$timeslot."')";
     $result = mysqli_query($conn,$query);
 
     if(!$result){
       echo "<h3>Registration unsuccessful <h3><br><br>";
     }else{
-      echo "<h3>Registration Success !</h3>";
+      // echo "<h3>Registration Success !</h3>";
+      header("Location: formsuccess.php");
     }
   }
 ?>
@@ -73,10 +73,14 @@
       <label for="lname">Last</label><br><br>
 
       <label for="gender"><b>Gender</b>:</label><br>
-      <input type="radio" id="male" name="gender" value="Male" required>
-      <label for="Male">Male</label><br>
-      <input type="radio" id="female" name="gender" value="Female" required>
-      <label for="Female">Female</label><br><br>
+      <label>
+        <input type="radio" id="male" name="gender" value="Male" required>
+        Male
+      </label><br>
+      <label>
+        <input type="radio" id="female" name="gender" value="Female" required>
+        Female
+      </label><br><br>
       
 
       <label for="cars"><b>When was the last time you exercise?</b>:</label><br>
@@ -89,12 +93,18 @@
       </select><br><br>
 
       <label for="timeslot"><b>Time Slot</b></label><br>
-      <input type="radio" id="timeslot" name="timeslot" value="Morning : 7.30 - 9.30 am" required>
-      <label for="timeslot">Morning : 7.30 - 9.30 am</label><br>
-      <input type="radio" id="timeslot" name="timeslot" value="Evening : 4.30 - 6.30 pm" required>
-      <label for="timeslot">Evening : 4.30 - 6.30 pm</label><br>
-      <input type="radio" id="timeslot" name="timeslot" value="Night : 8.30 - 10.30 pm" required>
-      <label for="timeslot">Night : 8.30 - 10.30 pm</label>
+      <label>
+        <input type="radio" id="timeslot" name="timeslot" value="Morning : 7.30 - 9.30 am" required>
+        Morning : 7.30 - 9.30 am
+      </label><br>
+      <label>
+        <input type="radio" id="timeslot" name="timeslot" value="Evening : 4.30 - 6.30 pm" required>
+        Evening : 4.30 - 6.30 pm
+      </label><br>
+      <label>
+        <input type="radio" id="timeslot" name="timeslot" value="Night : 8.30 - 10.30 pm" required>
+        Night : 8.30 - 10.30 pm
+      </label>
 
       <br><br>
       <input type="submit" value="Submit" name="register">

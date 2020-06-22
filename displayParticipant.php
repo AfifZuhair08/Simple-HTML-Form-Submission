@@ -4,7 +4,6 @@
   $title = "Gym Registration";
   require "./functions/mysql.php";
   $conn = db_connect();
-  $result = getAllRegistrationInfo($conn);
   $result2 = getTimeSlot1($conn);
 
 ?>
@@ -47,30 +46,27 @@
     </style>
 </head>
 <body>
-
-
-<div class="div1">
-<h3>Time Slot : Morning : 7.30 - 9.30 am</h3>
-    <table class="table1">
-        <tr>
-            <th>Gym ID</th>
-            <th>First Name </th>
-            <th>Last Name</th>
-            <th>Gender</th>
-            <th>Last Exercise</th>
-        </tr>
-        <?php while($row = mysqli_fetch_assoc($result)){?>
-        <tr>
-            <td><?php echo $row['gym_id']; ?></td>
-            <td><?php echo $row['f_name']; ?></td>
-            <td><?php echo $row['l_name']; ?></td>
-            <td><?php echo $row['gender']; ?></td>
-            <td><?php echo $row['lastexercise']; ?></td>
-        </tr>
-        <?php
-            }?>
-    </table>
-</div>
+    <div class="div1">
+    <h3>Time Slot : Morning : 7.30 - 9.30 am</h3>
+        <table class="table1">
+            <tr>
+                <th>Gym ID</th>
+                <th>First Name </th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Last Exercise</th>
+            </tr>
+            <?php while($row = mysqli_fetch_assoc($result2)){?>
+                <tr>
+                    <td><?php echo $row['gym_id']; ?></td>
+                    <td><?php echo $row['f_name']; ?></td>
+                    <td><?php echo $row['l_name']; ?></td>
+                    <td><?php echo $row['gender']; ?></td>
+                    <td><?php echo $row['lastexercise']; ?></td>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
 </body>
 
 <?php
